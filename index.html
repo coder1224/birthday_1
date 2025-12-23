@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sir! 🎉</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #ec4899;
+            --gold: #fbbf24;
+            --dark-bg: #0f172a;
+            --darker-bg: #020617;
+            --light-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-light: #94a3b8;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Scroll Reveal Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-reveal-left.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-reveal-right.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-reveal-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-reveal-scale.revealed {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(251, 191, 36, 0.2), transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(236, 72, 153, 0.2), transparent 50%);
+            animation: gradientShift 10s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .profile-img-hero {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.4);
+            margin-bottom: 2rem;
+            object-fit: cover;
+            animation: fadeInScale 1s ease-out, profileGlow 3s ease-in-out infinite;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 
+                        0 0 0 0 rgba(255, 255, 255, 0.2),
+                        inset 0 0 20px rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img-hero:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes profileGlow {
+            0%, 100% {
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 
+                            0 0 30px rgba(251, 191, 36, 0.3),
+                            inset 0 0 20px rgba(255, 255, 255, 0.1);
+            }
+            50% {
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 
+                            0 0 50px rgba(251, 191, 36, 0.6),
+                            inset 0 0 20px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+                         0 0 40px rgba(251, 191, 36, 0.2);
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.5s both;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.7s both;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            40% {
+                transform: translateY(-15px);
+                opacity: 0.7;
+            }
+            60% {
+                transform: translateY(-8px);
+                opacity: 0.85;
+            }
+        }
+
+        .scroll-indicator i {
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 5%;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 0 30px rgba(251, 191, 36, 0.3);
+            animation: titleShine 3s ease-in-out infinite;
+        }
+
+        @keyframes titleShine {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.2);
+            }
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b, #ec4899);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+        }
+
+        /* Message Section */
+        .message-section {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            position: relative;
+        }
+
+        .message-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1), transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.1), transparent 50%);
+        }
+
+        .message-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .message-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                        0 0 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .message-card h3 {
+            background: linear-gradient(135deg, #fbbf24, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .typewriter-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        .typewriter-line {
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Memories Section */
+        .memories-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            position: relative;
+        }
+
+        .memories-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.15), transparent 50%),
+                        radial-gradient(circle at 50% 100%, rgba(236, 72, 153, 0.15), transparent 50%);
+            pointer-events: none;
+        }
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .memory-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .memory-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5),
+                        0 0 40px rgba(99, 102, 241, 0.4);
+            border-color: rgba(251, 191, 36, 0.3);
+        }
+
+        .memory-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .memory-card:hover::before {
+            opacity: 1;
+        }
+
+        .memory-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .memory-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .memory-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .memory-card:hover .memory-overlay {
+            transform: translateY(0);
+        }
+
+        /* Tribute Section */
+        .tribute-section {
+            background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 100%);
+            position: relative;
+        }
+
+        .tribute-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(236, 72, 153, 0.15), transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.15), transparent 50%);
+        }
+
+        .tribute-content {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .tribute-content h3 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b, #fcd34d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-shadow: 0 0 30px rgba(251, 191, 36, 0.5);
+        }
+
+        .tribute-content p {
+            color: #fde68a;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .lesson-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.25));
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .lesson-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .lesson-card:hover::before {
+            opacity: 1;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.5),
+                        0 0 50px rgba(251, 191, 36, 0.3);
+            border-color: rgba(251, 191, 36, 0.3);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(139, 92, 246, 0.35));
+        }
+
+        .lesson-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .lesson-card h4 {
+            color: #fbbf24;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .lesson-card p {
+            color: #fde68a;
+            font-size: 0.95rem;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Wishes Section */
+        .wishes-section {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wishes-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(251, 191, 36, 0.2), transparent 50%);
+            animation: wishGlow 5s ease-in-out infinite;
+        }
+
+        @keyframes wishGlow {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.6;
+                transform: scale(1.1);
+            }
+        }
+
+        .wishes-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .wishes-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .wishes-content p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .cake-animation {
+            font-size: 5rem;
+            animation: pulse 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.6));
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1) rotate(-5deg);
+                filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.6));
+            }
+            50% {
+                transform: scale(1.15) rotate(5deg);
+                filter: drop-shadow(0 0 50px rgba(251, 191, 36, 0.9));
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .profile-img-hero {
+                width: 150px;
+                height: 150px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .message-card,
+            .tribute-content {
+                padding: 2rem;
+            }
+
+            .memories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lessons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wishes-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .wishes-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .profile-img-hero {
+                width: 120px;
+                height: 120px;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .message-card,
+            .tribute-content {
+                padding: 1.5rem;
+            }
+
+            .typewriter-text {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Loading Screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        #loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid #fbbf24;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.5);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            color: white;
+            font-size: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInOut 1.5s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .loading-emoji {
+            font-size: 3rem;
+            animation: bounce 1s ease-in-out infinite;
+            margin-top: 1rem;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+        <div class="loader-text">Loading Birthday Wishes...</div>
+        <div class="loading-emoji">🎂</div>
+    </div>
+
+    <!-- Main Content -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="Jyoti/9.jpg" alt="Jyoti Sir" class="profile-img-hero">
+            <h1>Happy Birthday</h1>
+            <h2>Jyoti Sir!</h2>
+            <p>
+                Today is not just another day—it marks the celebration of an exceptional person who has made a lasting impact on my life. You are not just my teacher or mentor, but like a brother who always guides me with care and wisdom.
+            </p>
+        </div>
+        <div class="scroll-indicator">
+            <i class='bx bx-chevron-down'></i>
+        </div>
+    </section>
+
+    <!-- Heartfelt Message Section -->
+    <section class="message-section" id="message">
+        <div class="container">
+            <div class="section-title scroll-reveal">
+                <h2>A Message For You</h2>
+            </div>
+            <div class="message-card scroll-reveal-scale">
+                <h3>Dear Sir,</h3>
+                <div id="typewriter-container" class="typewriter-text">
+                    <!-- Text will be typed here by JavaScript -->
+                           
+                        </div>
+                    </div>
+
+                    <span class="number-page">2</span>
+                    <span class="nextprev-btn back" data-page="turn-1">
+                        <i class='bx bx-chevron-left'></i>
+                    </span>
+                </div>
+            </div>
+         </div>
+</section>
+    
+
+    <!-- Memories Section -->
+    <section class="memories-section" id="memories">
+        <div class="container">
+            <div class="section-title scroll-reveal">
+                <h2>Cherished Memories</h2>
+            </div>
+            <div class="memories-grid">
+                <div class="memory-card scroll-reveal-left stagger-1">
+                    <img src="Jyoti/7.jpg" alt="Memory 1">
+                    <div class="memory-overlay"></div>
+                </div>
+                <div class="memory-card scroll-reveal-left stagger-2">
+                    <img src="Jyoti/8.jpg" alt="Memory 2">
+                    <div class="memory-overlay"></div>
+                </div>
+                <div class="memory-card scroll-reveal-right stagger-1">
+                    <img src="Jyoti/1.jpg" alt="Memory 3">
+                    <div class="memory-overlay"></div>
+                </div>
+                <div class="memory-card scroll-reveal-right stagger-2">
+                    <img src="Jyoti/2.jpg" alt="Memory 4">
+                    <div class="memory-overlay"></div>
+                </div>
+                <div class="memory-card scroll-reveal-left stagger-3">
+                    <img src="Jyoti/3.jpg" alt="Memory 5">
+                    <div class="memory-overlay"></div>
+                </div>
+                <div class="memory-card scroll-reveal-right stagger-3">
+                    <img src="Jyoti/4.jpg" alt="Memory 6">
+                    <div class="memory-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tribute Section -->
+    <section class="tribute-section" id="tribute">
+        <div class="container">
+            <div class="section-title scroll-reveal">
+                <h2>Special Tribute</h2>
+            </div>
+            <div class="tribute-content scroll-reveal-scale">
+                <h3>You've Taught Me</h3>
+                <p>Through your actions and words, you have shown me what true mentorship means. Your influence has shaped not just my education, but my entire perspective on life.</p>
+                
+                <div class="lessons-grid">
+                    <div class="lesson-card scroll-reveal stagger-1">
+                        <div class="icon">💡</div>
+                        <h4>To Never Stop Learning</h4>
+                        <p>Knowledge is a lifelong journey that enriches the soul</p>
+                    </div>
+                    <div class="lesson-card scroll-reveal stagger-2">
+                        <div class="icon">💪</div>
+                        <h4>To Face Challenges with Courage</h4>
+                        <p>Every obstacle is an opportunity for growth</p>
+                    </div>
+                    <div class="lesson-card scroll-reveal stagger-3">
+                        <div class="icon">❤️</div>
+                        <h4>To Lead with Kindness</h4>
+                        <p>Compassion and empathy are the greatest strengths</p>
+                    </div>
+                    <div class="lesson-card scroll-reveal stagger-4">
+                        <div class="icon">🌟</div>
+                        <h4>To Believe in Myself</h4>
+                        <p>Self-confidence unlocks infinite possibilities</p>
+                    </div>
+                    <div class="lesson-card scroll-reveal stagger-1">
+                        <div class="icon">🎯</div>
+                        <h4>To Set Clear Goals</h4>
+                        <p>Purpose and direction lead to achievement</p>
+                    </div>
+                    <div class="lesson-card scroll-reveal stagger-2">
+                        <div class="icon">🤝</div>
+                        <h4>To Value Relationships</h4>
+                        <p>True success is measured by meaningful connections</p>
+                    </div>
+                    <div class="lesson-card scroll-reveal stagger-3">
+                        <div class="icon">🔥</div>
+                        <h4>To Stay Passionate</h4>
+                        <p>Enthusiasm and dedication fuel excellence</p>
+                    </div>
+                    <div class="lesson-card scroll-reveal stagger-4">
+                        <div class="icon">🙏</div>
+                        <h4>To Practice Gratitude</h4>
+                        <p>Appreciation brings joy and abundance</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes Section -->
+    <section class="wishes-section" id="wishes">
+        <div class="container">
+            <div class="wishes-content scroll-reveal-scale">
+                <div class="cake-animation">🎂</div>
+                <h2>Best Wishes</h2>
+                <p>
+                    May this year bring you endless happiness, success, and all the beautiful moments you deserve. Thank you for being an inspiration and a guiding light in my life.
+                </p>
+                <p style="font-size: 1.5rem; margin-top: 2rem;">
+                    Happy Birthday, Sir! 🎉
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Typewriter Effect
+        const typewriterText = [
+            "You are not just a teacher who shared knowledge,",
+            "but a guide who shaped my thoughts,",
+            "a brother who stood by me,",
+            "and a friend who always understood.",
+            "",
+            "Your support, patience, and belief in me",
+            "have been one of the most valuable parts of my journey.",
+            "Because of you, learning became meaningful",
+            "and life became a little easier and brighter.",
+            "",
+            "I am truly grateful to have you as such",
+            "an important part of my life.",
+            "Thank you for everything you have done",
+            "and for the person you are.",
+            "",
+            "With deep respect and heartfelt gratitude 🤍"
+        ];
+
+        let lineIndex = 0;
+        let charIndex = 0;
+        let currentLine = '';
+        const typewriterContainer = document.getElementById('typewriter-container');
+        const typingSpeed = 30;
+        const lineDelay = 200;
+
+        function typeWriter() {
+            if (lineIndex < typewriterText.length) {
+                if (charIndex < typewriterText[lineIndex].length) {
+                    currentLine += typewriterText[lineIndex].charAt(charIndex);
+                    const lines = typewriterContainer.querySelectorAll('.typewriter-line');
+                    if (lines[lineIndex]) {
+                        lines[lineIndex].textContent = currentLine;
+                    }
+                    charIndex++;
+                    setTimeout(typeWriter, typingSpeed);
+                } else {
+                    lineIndex++;
+                    charIndex = 0;
+                    currentLine = '';
+                    if (lineIndex < typewriterText.length) {
+                        const newLine = document.createElement('div');
+                        newLine.className = 'typewriter-line';
+                        newLine.style.animationDelay = '0s';
+                        typewriterContainer.appendChild(newLine);
+                        setTimeout(typeWriter, lineDelay);
+                    }
+                }
+            }
+        }
+
+        setTimeout(() => {
+            const firstLine = document.createElement('div');
+            firstLine.className = 'typewriter-line';
+            typewriterContainer.appendChild(firstLine);
+            typeWriter();
+        }, 500);
+
+        // Hide loading screen after page loads
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Scroll Reveal Animation
+        function scrollReveal() {
+            const reveals = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+            
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const windowHeight = window.innerHeight;
+                
+                // Reveal when element is 150px into viewport
+                if (elementTop < windowHeight - 150 && elementBottom > 0) {
+                    element.classList.add('revealed');
+                }
+            });
+        }
+
+        // Run on scroll
+        window.addEventListener('scroll', scrollReveal);
+        
+        // Run on page load
+        window.addEventListener('load', scrollReveal);
+        
+        // Initial check
+        scrollReveal();
+    </script>
+</body>
+</html>
